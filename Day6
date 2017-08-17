@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Solution {
+   
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        int numberOfCases = scan.nextInt();
+        scan.nextLine();
+        String[] useCases = new String[numberOfCases];
+        int i = 0;
+        
+        while (scan.hasNextLine() && i < numberOfCases) {
+          String case = scan.nextLine();
+          useCases[i] = case;
+          i++;
+         }
+
+        for (int j = 0; j < numberOfCases; j++) {
+            char[] caseArray = useCases[j].toCharArray();
+            String evenCharacters = "";
+            String oddCharacters = "";
+            for (int k = 0; k < useCases[j].length(); k++) {
+                if (k%2==0) {
+                    evenCharacters = evenCharacters + caseArray[k];
+                } else {
+                    oddCharacters = oddCharacters + caseArray[k];
+                }
+            } 
+            System.out.println(evenCharacters + " " + oddCharacters);
+        }
+        
+    }
+}
